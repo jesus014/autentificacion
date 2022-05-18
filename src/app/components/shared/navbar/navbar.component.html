@@ -1,1 +1,25 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Auth0</a>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item " routerLinkActive="Active">
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="Active">
+        <a class="nav-link" routerLink="/precios">Precios</a>
+      </li>
+      <li class="nav-item" routerLinkActive="Active" *ngIf="auth.isAuthenticated$ | async" >
+        <a class="nav-link" routerLink="/protegida">Protegida</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      Navbar text with an inline element
+    </span>
+    <button class="btn btn-outline-primary" (click)="auth.loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">
+      Ingresar
+    </button>
+    <button class="btn btn-outline-danger" (click)="auth.logout()" *ngIf="auth.isAuthenticated$ | async"  >
+      Salir
+    </button>
+  </div>
+</nav>

@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { PreciosComponent } from './components/precios/precios.component';
 import { ProtegidaComponent } from './components/protegida/protegida.component';
+import { CallbackComponent } from './components/callback/callback.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,15 @@ import { ProtegidaComponent } from './components/protegida/protegida.component';
     NavbarComponent,
     HomeComponent,
     PreciosComponent,
-    ProtegidaComponent
+    ProtegidaComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule.forRoot({
       domain: 'dev-hsv76nc9.us.auth0.com',
-      clientId: 'nzR68rzNMBCv3UHIjshrG9QOT2X1PRxg'
+      clientId: 'yCRc0JP4WpfKUiPcAVHZxemUpaBqRcXy'
     }),
   ],
   providers: [],
